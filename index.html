@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق عجلة الحظ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wheel-container">
+        <canvas id="wheel"></canvas>
+        <button id="spin-btn">تدوير العجلة</button>
+    </div>
+
+    <!-- نافذة إدخال كلمة المرور -->
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <label>أدخل كلمة المرور:</label>
+            <input type="password" id="password-input">
+            <button id="submit-password">تأكيد</button>
+            <button id="cancel-password">رجوع</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
