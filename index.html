@@ -1,27 +1,411 @@
+
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيق عجلة الحظ</title>
-    <link rel="stylesheet" href="style.css">
+    <title>عروض أسعار كدابرا للربط</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .service-title {
+            color: #2c3e50;
+            border-right: 4px solid #3498db;
+            padding-right: 15px;
+            margin: 0 0 20px 0;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .pricing-table th {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .pricing-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        .pricing-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .currency-symbol {
+            color: #27ae60;
+            font-size: 0.8em;
+            margin-right: 3px;
+        }
+
+        .note {
+            color: #e67e22;
+            font-size: 0.9em;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-table td, .pricing-table th {
+                padding: 8px;
+                font-size: 14px;
+            }
+            
+            .service-title {
+                font-size: 1.2em;
+            }
+        }
+
+        .service-section:nth-child(odd) {
+            border-right: 4px solid #3498db;
+        }
+
+        .service-section:nth-child(even) {
+            border-right: 4px solid #27ae60;
+        }
+    </style>
 </head>
 <body>
-    <div class="wheel-container">
-        <canvas id="wheel"></canvas>
-        <button id="spin-btn">تدوير العجلة</button>
-    </div>
+    <div class="container">
+        <!-- يويو -->
+        <div class="service-section">
+            <h2 class="service-title">شحن يويو </h2>
+            <table class="pricing-table">
+                <tr>
+                    <th>الفئة</th>
+                    <th>سعر التكلفة (R.Y)</th>
+                    <th>سعر التكلفة (USD)</th> 
+                    <th>السعر المقترح (R.Y)</th>
+                    <th>السعر المقترح (USD)</th>
+                    <th>الربط الموحد</th>
+                </tr>
+                <tr>
+                    <td>1000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">1000</td>
+                </tr>
+                <tr>
+                    <td>1500 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">1500</td>
+                </tr>
+                 <tr>
+                    <td> 2000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">2000</td>
+                </tr>
+                <tr>
+                    <td> 3000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">3000</td>
+                </tr>
+                <tr>
+                    <td> 4000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">4000</td>
+                </tr>
+                <tr>
+                    <td> 5000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">5000</td>
+                </tr>
+                <tr>
+                    <td> 5150 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">5150</td>
+                </tr><tr>
+                    <td> 10,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">10,000</td>
+                </tr>
+                <tr>
+                    <td> 10,300 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">10,300</td>
+                </tr>
+                <tr>
+                    <td> 12,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">12,000</td>
+                </tr>
+                
+            </table>
+            <div class="note">
+                طريقة التسليم: شحن لحساب العميل مباشر (ربط مباشر)
+            </div>
+            <div class="note">
+                رقم الشبكة ( yo_o_y_ou ) 
+                </div>
+            <div class="note"> الحقول المطلوبة الايدي id</div>
+        </div>
 
-    <!-- نافذة إدخال كلمة المرور -->
-    <div id="password-modal" class="modal">
-        <div class="modal-content">
-            <label>أدخل كلمة المرور:</label>
-            <input type="password" id="password-input">
-            <button id="submit-password">تأكيد</button>
-            <button id="cancel-password">رجوع</button>
+        <!-- زينا لايف -->
+        <div class="service-section">
+            <h2 class="service-title">زينا لايف </h2>
+            <table class="pricing-table">
+                <tr>
+                    <th>الفئة</th>
+                    <th>سعر التكلفة (R.Y)</th>
+                    <th>سعر التكلفة (USD)</th> 
+                    <th>السعر المقترح (R.Y)</th>
+                    <th>السعر المقترح (USD)</th>
+                    <th>الربط الموحد</th>
+                </tr>
+                <tr>
+                    <td>10,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">10000</td>
+                </tr>
+                <tr>
+                    <td>20,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">20000</td>
+                </tr>
+                
+               <tr>
+                    <td> 30,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">30000</td>
+                </tr><tr>
+                    <td> 50,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">50000</td>
+                </tr><tr>
+                    <td> 100,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">100000</td>
+                </tr><tr>
+                    <td> 200,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">200000</td>
+                </tr><tr>
+                    <td> 300,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">300000</td>
+                </tr><tr>
+                    <td> 500,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">500000</td>
+                </tr>
+                <tr>
+                    <td> 1,000,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">1000000</td>
+                </tr>
+                 <tr>
+                    <td> 2,000,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">2000000</td>
+                </tr>
+                </table>
+                
+                            <div class="note">
+                طريقة التسليم: شحن لحساب العميل مباشر (ربط مباشر)
+            </div>
+            <div class="note">
+                رقم الشبكة ( yHA872uGA ) 
+                </div>
+            <div class="note"> الحقول المطلوبة الايدي id</div>
+        </div>
+    </div>
+    
+    <!-- شحن يوهو  -->
+
+        <div class="service-section">
+            <h2 class="service-title">شحن يوهو</h2>
+            <table class="pricing-table">
+                <tr>
+                    <th>الفئة</th>
+                    <th>سعر التكلفة (R.Y)</th>
+                    <th>سعر التكلفة (USD)</th> 
+                    <th>السعر المقترح (R.Y)</th>
+                    <th>السعر المقترح (USD)</th>
+                    <th>الربط الموحد</th>
+                </tr>
+                <tr>
+                    <td>10,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">10000</td>
+                </tr>
+                <td>20,000 كونزة</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">0</td>
+                    <td class="currency">20000</td>
+                </tr>
+                
+                  
+                
+                
+                </table>
+                
+  <div class="note">
+                طريقة التسليم: شحن لحساب العميل مباشر ربط مباشر
+            </div>
+            <div class="note">
+             رقم الشبكة ( yoho )
+                </div>
+                 <div class="note"> الحقول المطلوبة الايدي id</div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const exchangeRate = 560;
+            const serviceRates = {
+            
+                "شحن يويو": { costPerUnit: 0.000787, suggestedPerUnit: 0.000848 },
+                
+                "زينا لايف": { costPerUnit: 0.0005, suggestedPerUnit: 0.0006 },
+             
+             
+                "شحن يوهو": { costPerUnit: 0.0001079, suggestedPerUnit: 0.0001104 },
+                  
+            };
+
+            function extractNumber(text) {
+                return parseInt(text.replace(/[^\d]/g, '')) || 0;
+            }
+
+            function smartFormat(number, isRY) {
+                if (isRY) {
+                    return number.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+
+                // تقريب إلى 3 منازل عشرية مع معالجة خاصة
+                const rounded = Math.round(number * 1000) / 1000;
+                let formatted = rounded.toFixed(3);
+                
+                // إزالة الأصفار الزائدة
+                formatted = formatted
+                    .replace(/\.?0+$/, '') // إزالة الأصفار في النهاية
+                    .replace(/(\.\d*?[1-9])0+$/, '$1'); // إزالة الأصفار بعد آخر رقم غير صفري
+
+                return formatted.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            function calculatePrices() {
+                document.querySelectorAll('.service-section').forEach(section => {
+                    const title = section.querySelector('.service-title').textContent.trim();
+                    const service = serviceRates[title];
+                    
+                    if (!service) return;
+
+                    section.querySelectorAll('tr:not(:first-child)').forEach(row => {
+                        const cells = row.querySelectorAll('td');
+                        const quantity = extractNumber(cells[0].textContent);
+                        
+                        const costUSD = quantity * service.costPerUnit;
+                        const suggestedUSD = quantity * service.suggestedPerUnit;
+                        const costRY = costUSD * exchangeRate;
+                        const suggestedRY = suggestedUSD * exchangeRate;
+
+                        cells[1].innerHTML = `${smartFormat(costRY, true)} <span class="currency-symbol">R.Y</span>`;
+                        cells[2].innerHTML = `${smartFormat(costUSD, false)} <span class="currency-symbol">USD</span>`;
+                        cells[3].innerHTML = `${smartFormat(suggestedRY, true)} <span class="currency-symbol">R.Y</span>`;
+                        cells[4].innerHTML = `${smartFormat(suggestedUSD, false)} <span class="currency-symbol">USD</span>`;
+                    });
+                });
+            }
+
+            calculatePrices();
+        });
+    </script>
 </body>
 </html>
+
+
+    
